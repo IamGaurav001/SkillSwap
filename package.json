@@ -2,7 +2,7 @@
   "name": "skillswap",
   "version": "1.0.0",
   "private": true,
-  "description": "SkillSwap \u2014 a creator gig marketplace (Azisly Hackathon, Track C)",
+  "description": "SkillSwap — a creator gig marketplace (Azisly Hackathon, Track C)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,7 +12,7 @@
     "seed": "node scripts/seed-demo.mjs"
   },
   "dependencies": {
-    "next": "15.1.6",
+    "next": "^15.5.24",
     "pg": "8.13.1",
     "react": "19.0.0",
     "react-dom": "19.0.0"
