@@ -1,6 +1,6 @@
 # SkillSwap — a creator gig marketplace
 
-**Hackathon ID: `REPLACE-WITH-YOUR-HACKATHON-ID`**
+**Hackathon ID: AZIS-H7NH6Y
 
 > ⚠️ **Before submitting:** replace the line above with the Hackathon ID issued to
 > your team. A missing or mismatched ID disqualifies the submission, and it is the
