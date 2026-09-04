@@ -1,6 +1,7 @@
 # SkillSwap — a creator gig marketplace
 
-**Hackathon ID: AZIS-T5CS9T
+**Hackathon ID: AZIS-T5CS9T**
+
 
 > ⚠️ **Before submitting:** replace the line above with the Hackathon ID issued to
 > your team. A missing or mismatched ID disqualifies the submission, and it is the
@@ -61,7 +62,7 @@ Other scripts: `npm run build`, `npm start`, `npm run typecheck`.
 Base: the live URL. No authentication, no headers required beyond
 `Content-Type: application/json` on writes. `200` and `201` both mean success.
 
-### `POST /api/gigs`
+### `POST /api/services` (also available via `/api/gigs`)
 
 ```jsonc
 // request
@@ -77,13 +78,13 @@ Base: the live URL. No authentication, no headers required beyond
 `rate` is accepted as a number or a numeric string and always returned as a JSON
 number.
 
-### `GET /api/gigs`
+### `GET /api/services` (also available via `/api/gigs`)
 
 Returns a JSON array, newest first.
 
 | Param | Meaning |
 |---|---|
-| `search` | Case-insensitive substring of the gig **title**. See the note below. |
+| `search` | Case-insensitive substring of the gig/service **title**. See the note below. |
 | `category` | Exact, case-insensitive category match. |
 | `limit` | Result cap. Default 500, max 5000; there is no pagination cursor — the whole set comes back in one response. |
 
@@ -193,7 +194,8 @@ app/
   gigs/[id]/page.tsx          gig detail + booking form (Feature 3)
   dashboard/page.tsx          creator dashboard (Feature 4)
   my-bookings/page.tsx        client's bookings (Feature 5)
-  api/gigs/route.ts           POST, GET
+  api/services/route.ts       POST, GET
+  api/gigs/route.ts           alias to api/services
   api/bookings/route.ts       POST, GET
   api/bookings/[id]/route.ts  GET, PATCH
   api/health/route.ts         liveness + active driver
@@ -211,7 +213,7 @@ scripts/seed-demo.mjs         optional demo fixtures
 The pages read through `lib/store.ts` directly rather than fetching the app's own
 HTTP API — an extra hop to itself would only add latency and a second failure mode.
 Both paths share the query semantics in `lib/filters.ts`, so the listing page and
-`GET /api/gigs` can never disagree about what `?category=Music` means.
+`GET /api/services` can never disagree about what `?category=Music` means.
 
 ---
 

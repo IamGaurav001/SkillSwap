@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * The post-a-gig form. Submits to the standard API (POST /api/gigs) rather than a
+ * The post-a-gig form. Submits to the standard API (POST /api/services) rather than a
  * server action, so the UI exercises exactly the same endpoint an external client
  * would -- if the API regresses, this page breaks with it instead of hiding it.
  *
@@ -34,7 +34,7 @@ export function PostGigForm() {
     setError(null);
 
     try {
-      const res = await fetch('/api/gigs', {
+      const res = await fetch('/api/services', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({

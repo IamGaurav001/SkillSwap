@@ -96,7 +96,7 @@ async function main() {
   const ids = new Map();
 
   for (const gig of GIGS) {
-    const created = await post('/api/gigs', gig);
+    const created = await post('/api/services', gig);
     ids.set(gig.title, created.id);
     console.log(`  gig      ${gig.title}`);
   }
